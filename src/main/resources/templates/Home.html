@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>FoodFrenzy</title>
+    <head>
+    <link rel="icon" type="image/x-icon" href="./Images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" th:href="@{/css/Home.css}" />
+
+    <style>
+        body {
+            background-image: url('./Images/istockphoto-1006271368-612x612.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .hero-content h1:hover {
+            color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        .hero-content h3 {
+            font-weight: 300;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            background: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff5722;
+        }
+
+        .btn-outline:hover {
+            background: #ff5722;
+        }
+
+        .features {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px 30px;
+            border-radius: 15px;
+            width: 200px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .feature-box i {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>🍕 BiteBee Food Delivery</h1>
+            <h3>
+                Delicious food delivered to your door.<br>
+                Fresh, Fast & Reliable service every time!
+            </h3>
+
+            <div class="btn-group">
+                <button class="btn" onclick="goToMenu()">Order Now</button>
+                <button class="btn btn-outline" onclick="goToLogin()">Login</button>
+            </div>
+
+            <div class="features">
+                <div class="feature-box">
+                    <i class="fa-solid fa-burger"></i>
+                    <p>Best Restaurants</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <p>Fast Delivery</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-star"></i>
+                    <p>Top Rated Food</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToMenu() {
+            alert("Redirecting to food menu...");
+            // window.location.href = "/menu";   // Spring mapping
+        }
+
+        function goToLogin() {
+            alert("Redirecting to login page...");
+            // window.location.href = "/login";
+        }
+    </script>
+</body>
+    
+
+</html>
